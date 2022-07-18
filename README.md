@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# GimmieMusic
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+GimmieMusic is a music discovery app that allows users to search for information about artist as well as discover new music. 
 
-## Available Scripts
+You can use the Search Artist feature to search for a specific artist and recieve information about them. 
 
-In the project directory, you can run:
+Need more music to add to your playlist that sounds like your favorite artists? Use the Similar Artist feature to get a list of top bands similar to your favorites.
 
-### `npm start`
+Looking to explore new music or epand your list of artist from a specific genre? Use the Search By Genre feature to get a list of current top artist in that requested genre.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+![Desktop - 1](https://user-images.githubusercontent.com/105838964/179350661-a4b218ab-263b-4fa4-b545-ce66bbad98e4.png)
+![Desktop - 2](https://user-images.githubusercontent.com/105838964/179350724-551b9fb0-8b27-4a9f-b57b-ac10f561ffcb.png)
+![iPhone 13 Pro Max - 1](https://user-images.githubusercontent.com/105838964/179351024-0c7bc392-2d2c-4272-b5fb-1e282f2b64b2.png)
+![iPhone 13 Pro Max - 2](https://user-images.githubusercontent.com/105838964/179350730-60d19bc1-fb86-410b-9a62-dab53c02f89e.png)
+<img width="1632" alt="Flow" src="https://user-images.githubusercontent.com/105838964/179352522-fbf69edb-32b5-4feb-8146-eebef7173ee8.png">
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## API
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Napster Api -https://developer.prod.napster.com/developer
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## MVP
+-Have 6 components to render an About page, Home page, Search page.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-Have a service component to handle several API calls using endpoints for artists, gengres, etc.
 
-### `npm run eject`
+-Maintain easy to use navigation between pages.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Post MVP 
+-Include a feature that displays where selected artists are performing.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+-Include Dark Mode.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-Include a feature to allow the user to sample selected artist.

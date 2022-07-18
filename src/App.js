@@ -1,23 +1,49 @@
-import logo from './logo.svg';
 import './App.css';
+import { Routes,Route } from 'react-router-dom';
+import NavBar from './components/NavBar';
+import {getArtist,getSimilar,getArtistByGenre, getGenreName} from './API/artistSearch'
+import Search from './components/Search'
+import Home from './components/Home';
+import About from './components/About';
+import Lyrics from './components/Lyrics';
+
+
+
+
+// getArtist('sum41')
+// getSimilar('art.35104')
+// getArtistByGenre('rock')
+// 'g.115', 'g.5', 'g.33', 'g.394', 'g.112'
+// getGenreName('g.115')
+// getGenreName('g.5')
+// getGenreName('g.33')
+// getGenreName('g.394')
+// getGenreName('g.112')
+
+// let ranNum = Math.floor(Math.random()* 1000000).toString()
+// let testNum = '28463069'
+// let testNum2 = '35103'
+// console.log(`the random number is ${ranNum}`)
+// getRandomArtist(ranNum)
+// getRandomArtist(testNum)
+// getRandomArtist(testNum2)
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    <NavBar></NavBar>
+    <div>
+      <Routes>
+      <Route path='/' element={<Home/>} />
+      <Route path='/search' element={<Search/>} />
+      <Route path='/about' element={<About/>} />
+      <Route path='/lyrics' element={<Lyrics/>}/>
+
+      </Routes>
+    </div>  
+    
     </div>
   );
 }
