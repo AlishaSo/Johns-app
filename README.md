@@ -33,4 +33,8 @@ Napster Api -https://developer.prod.napster.com/developer
 
 -Include Dark Mode.
 
+<<<<<<< HEAD
 -Include a feature to allow the user to sample selected artist.
+=======
+-Include a feature to allow the user to sample selected artist.
+>>>>>>> d70cb43e9c4d07af033f317c97ccf892ea037b8a
