@@ -7,6 +7,7 @@ function NavBar(){
         <NavLink to={'/search'}>Search</NavLink>
         <NavLink to={'/about'}>About</NavLink>
         <NavLink to={'/lyrics'}>Lyrics</NavLink>
+        <NavLink to={'./explore'}>Explore</NavLink>
     </div>    
     )
 }

@@ -17,9 +17,11 @@ Looking to explore new music or epand your list of artist from a specific genre?
 <img width="1632" alt="Flow" src="https://user-images.githubusercontent.com/105838964/179352522-fbf69edb-32b5-4feb-8146-eebef7173ee8.png">
 
 
-## API
+## API Used
 
-Napster Api -https://developer.prod.napster.com/developer
+Napster API - https://developer.prod.napster.com/developer
+
+Vegalime API - https://api.vagalume.com.br/docs/letras/
 
 ## MVP
 -Have 6 components to render an About page, Home page, Search page.
@@ -32,9 +34,3 @@ Napster Api -https://developer.prod.napster.com/developer
 -Include a feature that displays where selected artists are performing.
 
 -Include Dark Mode.
-
-<<<<<<< HEAD
--Include a feature to allow the user to sample selected artist.
-=======
--Include a feature to allow the user to sample selected artist.
->>>>>>> d70cb43e9c4d07af033f317c97ccf892ea037b8a
