@@ -1,7 +1,8 @@
 function Home(){
     return (
-        <div>
-            <h3>GIMMIE MUSIC</h3>
+        <div className="Container">
+            <h3 className="Logo">GIMMIE </h3>
+            <h3 className="Logo">MUSIC</h3>
         </div>
     )
 }

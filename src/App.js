@@ -6,11 +6,13 @@ import Search from './components/Search'
 import Home from './components/Home';
 import About from './components/About';
 import Lyrics from './components/Lyrics';
-import ArtistByGenre from './components/ArtistByGenre';
+import NotFound from './components/NotFound';
+import Explore from './components/Explore';
+import Similar from './components/Similar';
 
 
 
-
+// getSimilar('art.35104')
 // getArtist('sum41')
 // getSimilar('art.35104')
 // getArtistByGenre('rock')
@@ -21,6 +23,7 @@ import ArtistByGenre from './components/ArtistByGenre';
 // getGenreName('g.394')
 // getGenreName('g.112')
 // getAllGenres()
+getGenreName('g.10')
 
 
 // let ranNum = Math.floor(Math.random()* 1000000).toString()
@@ -42,8 +45,11 @@ function App() {
       <Route path='/' element={<Home/>} />
       <Route path='/search' element={<Search/>} />
       <Route path='/about' element={<About/>} />
-      <Route path='/lyrics' element={<Lyrics/>}/>
-      <Route path='/explore' element={<ArtistByGenre/>} />
+      <Route path='/lyrics' element={<Lyrics/>} />
+      <Route path='/explore' element={<Explore/>} />
+      <Route path='/similar' element={<Similar/>} />
+
+      <Route path='*' element={<NotFound/>} />
 
       </Routes>
     </div>  

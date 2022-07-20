@@ -18,8 +18,8 @@ export async function getArtist(word){
 // gets similar artist using ID
 export async function getSimilar(id){
     const response = await axios.get(`${BASE_URL}artists/${id}/similar?apikey=${API_KEY}`)
-    // console.log(response)
-    return response
+    console.log(response.data.artists)
+    return response.data.artists
     }
 
 // https://api.napster.com/v2.2/genres/rock?apikey=YTkxZTRhNzAtODdlNy00ZjMzLTg0MWItOTc0NmZmNjU4Yzk4
@@ -28,8 +28,8 @@ export async function getSimilar(id){
 //get top artist by genre
 export async function getArtistByGenre(genre){
     const response = await axios.get(`${BASE_URL}genres/${genre}/artists/top?apikey=${API_KEY}`)
-    console.log(response)
-    return response
+    console.log(response.data.artists)
+    return response.data.artists
     }
 
 // http://api.napster.com/v2.2/genres/g.397?apikey=YTkxZTRhNzAtODdlNy00ZjMzLTg0MWItOTc0NmZmNjU4Yzk4

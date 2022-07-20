@@ -61,7 +61,7 @@ console.log(genres)
 
 
 return(
-    <div>
+    <div className='Search'>
         <input type='text' value={word} onChange ={ e =>{
             let input = e.target.value
             setWord(input)
@@ -70,28 +70,21 @@ return(
             handleClick(word)
             // art(results.id)
             }}>CLICK ME</button>
-        <div>
-            <img src={albumArt} alt=''></img>
+        <div className='SearchContainer'>
+            <img className='SearchImage' src={albumArt} alt=''></img>
+        <div className='SearchResults'>
             <h1> {results.name}</h1>
                 {/* {genres} */}
             <p> {facts}</p>
-             {
-               
+             { 
                 topTracks ? (
                     <> 
                         <h3>Top Tracks</h3>
                         {topTracks}
                         </>     
                     ) : null
-                // topTracks && (
-                //     <> 
-                //     <h3>Top Tracks</h3>
-                //     {topTracks}
-                //     </>     
-                // )      
             }
-         
-            
+            </div>
         </div>
     </div>
 )
