@@ -1,5 +1,10 @@
 import { useState } from "react"
 import {getLyrics} from '../API/artistSearch'
+import * as React from 'react';
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+
 function Lyrics(){
 const [word1,setWord1] = useState()
 const [word2,setWord2] = useState()
@@ -15,24 +20,30 @@ console.log(lyrics)
 }
 
 
-    return(
-        <div className="Lyrics"> 
+    return(<div>
+        <div className="SearchBar"> 
             <h4> Give me the lyrics for </h4>
-            <input type='text' value={word2} placeholder='Song' onChange ={ e =>{
+            <TextField id="outlined-basic" label="Song" variant="outlined" type='text' value={word2} onChange ={ e =>{
             let input = e.target.value
             setWord2(input)
-        }} ></input>
+        }} ></TextField>
             <h4>By: </h4>
 
-            <input type='text' value={word1} placeholder='Artist' onChange ={ e =>{
+            <TextField id="outlined-basic" label="Artist" variant="outlined" type='text' value={word1} onChange ={ e =>{
             let input = e.target.value
             setWord1(input)
-        }} ></input>
+        }} ></TextField>
 
-
-        <button onClick={()=>{
+        <div>
+            <Button size="large" variant="contained" onClick={()=>{
             handleClick(word1,word2)
-            }}>Click ME</button>
+            }}>Click ME</Button> 
+        </div>
+        </div>
+       
+       <div className="SearchResults">
+
+       
         {
             lyrics ? (
                         <> 
@@ -41,11 +52,12 @@ console.log(lyrics)
                         </>     
                     ) : null
         }
-            
+         </div>   
 
             
 
-        </div>
+        
+    </div>
             
         
            

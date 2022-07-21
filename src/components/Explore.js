@@ -1,5 +1,8 @@
 import {useEffect, useState} from 'react'
 import {getArtistByGenre,getAllGenres,getArt} from '../API/artistSearch'
+import * as React from 'react';
+import Button from '@mui/material/Button';
+
 function Explore(){
 const [artists,setArtists] = useState([])
 const [list,setList] = useState([])
@@ -8,23 +11,32 @@ const [list,setList] = useState([])
 //    }
 
 async function handleButton(id){
+try{
 console.log(id)
 const results= ((await getArtistByGenre(id)))
 console.log(results)
-const mappedResults = (results.map((result,index)=>{
-    // const art = getArt(result.id)
-    // // const image = art.data.images[0].url
-    // console.log(art)
-    // // console.log(image)
-    // console.log(result)
+const promises = results.map(result=>getArt(result.id))
+const images = await Promise.all(promises)
+console.log(images)
+const mappedResults = (results.map(async(result,index)=>{
+    // const image = images[index].data.images[0].url
+    
+    // console.log(image)
+    console.log(result)
     return (
         <div>  
+    {/* <img src={image} alt=''></img> */}
     <h3>{result.name}</h3>
     <p>{result.blurbs}</p>
+
     </div>
     )
 }))
+console.log(mappedResults)
 setArtists(mappedResults)
+}catch(error){
+    console.log(error)
+}
 }
 
 
@@ -34,11 +46,16 @@ async function displayGenres(){
 const allGenres =  await getAllGenres()
 console.log(allGenres)
 const mappedGenres = allGenres.map((genre,index)=>{
-    return <button key={index} onClick={()=>{
+    
+    return (
+    
+        <Button  size="large" variant="contained" key={index} onClick={()=>{
 
         console.log(genre.id)
         handleButton(genre.id)
-    }}>{genre.name}</button>
+        }}>{genre.name}</Button>
+    
+    )
 
    
 })
@@ -57,17 +74,15 @@ console.log(list)
 
     return(
         <div>
-           {/* <input type='text' value={genre} placeholder='' onChange ={ e =>{
-            let input = e.target.value
-            setGenre(input)
-        }} ></input>
-         <button onClick={()=>{
-            handleClick(genre)
-            }}>Click ME</button> */}
-            {list}
-            {artists}
 
-            {/* {mappedGenres} */}
+            
+            {list}
+            
+            
+            {artists}
+            
+
+            
 
         </div>
     )

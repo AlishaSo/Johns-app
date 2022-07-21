@@ -37,37 +37,59 @@ a{
 }
 
 .Search{
-  background-color: #312259 ;
+  display: flex;
+align-content: center;
+
+  /* background-color: #312259 ;
+  color: white;
+  font-family: Michroma;
+  height: 90vh; 
+  width: 100vw; */
+}
+
+/* .SearchContainer{
+  display: flex;
+ background-color: #312259 ;
   color: white;
   font-family: Michroma;
   height: 90vh; 
   width: 100vw;
+} */
+
+.SearchBar{
+display: flex ;
+margin: 10px;
+align-items:  center;
+justify-content: center;
 }
 
-.SearchContainer{
-  display: flex;
+.SearchResults{
+  padding: 10px;
+  font-family: Michroma;
+  word-spacing: 5px;
 }
+
 
 .SearchImage{
   height: auto;
   width: auto;
 }
 
-.Lyrics{
+/* .Lyrics{
   display: flex;
   justify-content: center;
   background-color: #312259 ;
   color: white;
   height: 90vh; 
   width: 100vw;
-}
+} */
 .Similar{
   display: flex;
   justify-content: center;
-  background-color: #312259 ;
+  /* background-color: #312259 ;
   color: white;
   height: 90vh; 
-  width: 100vw;
+  width: 100vw; */
 }
 
 .About{
@@ -81,10 +103,14 @@ a{
  
 }
 
-h4{
-  margin: 0;
+
+/* .ExploreButton{
+  margin: 5px;
 }
-input{
-  height: 22px;
-  
-}
+
+.ExploreList{
+  width: 100vw;
+  display: flex;
+} */
+
+

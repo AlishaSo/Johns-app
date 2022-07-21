@@ -1,5 +1,8 @@
 import { useState } from "react"
 import {getArtist,getSimilar,getArt} from '../API/artistSearch'
+import * as React from 'react';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 
 function Similar(){
 const [word,setWord] = useState()
@@ -43,17 +46,17 @@ async function handleClick(word){
     return (<div>
 
    
-        <div className='Similar'>
+        <div className='SearchBar'>
             <h4>Give me artists that sound like: </h4>
-           <input type='text' placeholder="Artist" value={word} onChange ={ e =>{
+           <TextField id="outlined-basic" label="Artist" variant="outlined" type='text' value={word} onChange ={ e =>{
             let input = e.target.value
             setWord(input)
-        }} ></input>
+        }} ></TextField>
         
-            <button onClick={()=>{
+            <Button size="large" variant="contained" onClick={()=>{
             handleClick(word)
             // art(results.id)
-            }}>CLICK ME</button>
+            }}>CLICK ME</Button>
         </div>
             {similar}
         

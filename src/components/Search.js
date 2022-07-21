@@ -1,6 +1,9 @@
 import {useState} from 'react'
 import {useEffect} from 'react'
 import {getArtist,getArt,getTopTracks,getGenreName} from '../API/artistSearch'
+import * as React from 'react';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 
 
 function Search(props){
@@ -61,16 +64,21 @@ console.log(genres)
 
 
 return(
-    <div className='Search'>
-        <input type='text' value={word} onChange ={ e =>{
+    <div className='SearchContainer'>
+        <div className='SearchBar'>
+
+       
+        <TextField id="outlined-basic" label="Artist" variant="outlined" type='text' value={word} onChange ={ e =>{
             let input = e.target.value
             setWord(input)
-        }} ></input>
-        <button onClick={()=>{
+        }} ></TextField>
+        <Button size="large" variant="contained" onClick={()=>{
             handleClick(word)
             // art(results.id)
-            }}>CLICK ME</button>
-        <div className='SearchContainer'>
+            }}>CLICK ME</Button>
+        </div>
+
+        <div className='Search'>
             <img className='SearchImage' src={albumArt} alt=''></img>
         <div className='SearchResults'>
             <h1> {results.name}</h1>
