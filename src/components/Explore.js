@@ -34,26 +34,27 @@ setArtists(mappedResults)
 
 
 
-async function displayGenres(){
-const allGenres =  await getAllGenres()
-const mappedGenres = allGenres.map((genre,index)=>{
-    
-    return (
-    
-        <Button  size="large" variant="contained" key={index} onClick={()=>{
 
-        console.log(genre.id)
-        handleButton(genre.id)
-        }}>{genre.name}</Button>
-    
-    )
-
-   
-})
- setList(mappedGenres)
-}
 useEffect(()=>{
-  displayGenres()  
+    async function displayGenres(){
+        const allGenres =  await getAllGenres()
+        const mappedGenres = allGenres.map((genre,index)=>{
+            
+            return (
+            
+                <Button  size="large" variant="contained" key={index} onClick={()=>{
+        
+               
+                handleButton(genre.id)
+                }}>{genre.name}</Button>
+            
+            )
+        
+           
+        })
+         setList(mappedGenres)
+        }
+    displayGenres()
 },[])
 
 
@@ -64,17 +65,9 @@ useEffect(()=>{
 
 
     return(
-        <div className='SearchResults'>
-
-            
+        <div className='SearchResults'>    
             {list}
-            
-            
             {artists}
-            
-
-            
-
         </div>
     )
 }
