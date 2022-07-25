@@ -1,51 +1,30 @@
-import {useState} from 'react'
-import {useEffect} from 'react'
-import {getArtist,getArt,getTopTracks,getGenreName} from '../API/artistSearch'
+import {useState} from 'react';
+import { ArtistDetails, TopSongs } from '../API/MusicAPI';
 import * as React from 'react';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 
 
 function Search(props){
-const [results,setResults] = useState([])
+const [results,setResults] = useState()
 const [word,setWord] = useState('')
-const [albumArt,setAlbumArt] = useState([])
-const [facts,setFacts] = useState('')
-const [topTracks, setTopTracks] = useState(null)
-const [genres, setGenres] = useState([])
+const [songs,setSongs] = useState(null)
 
 async function handleClick(word){
     if (word===''){
-        return null
+         alert('Please enter an artist')
     }else{
-const artist = await getArtist(word)
-const result = artist.data.search.data.artists[0]
-const art = await getArt(result.id)
-const blurbs = result.blurbs
-const tracks = (await getTopTracks(result.id)).data.tracks.map((track,index)=>{
-    return <p>{index+1}: {track.name}</p>
+setSongs(null)
+const artist = await (await ArtistDetails(word)).data.artists[0]
+console.log(artist)
+setResults(artist)
+const top = await (await TopSongs(word)).data.track
+console.log(top)
+const mappedTop = top.map((song,index)=>{
+    return <p>{index + 1}:{song.strTrack}</p>
 })
+setSongs(mappedTop)
 
-/////////needs fixed/////////
-const genre = result.links.genres.ids
-const mappedGenre = genre.map( async (genre,index)=>{
-    let results = await getGenreName(genre)
-    console.log(results)
-    return <p>{results.data.genres[0].name}</p>
-})
-
-console.log(result)
-console.log(tracks)
-console.log(genre)
-console.log(mappedGenre)
-
-
-setResults(result)
-setAlbumArt(art.data.images[0].url)
-setFacts(blurbs)
-setTopTracks(tracks)
-setGenres(mappedGenre)
-console.log(genres)
 
 
     }
@@ -78,23 +57,33 @@ return(
             }}>CLICK ME</Button>
         </div>
 
-        <div className='Search'>
-            <img className='SearchImage' src={albumArt} alt=''></img>
-        <div className='SearchResults'>
-            <h1> {results.name}</h1>
-                {/* {genres} */}
-            <p> {facts}</p>
-             { 
-                topTracks ? (
-                    <> 
-                        <h3>Top Tracks</h3>
-                        {topTracks}
-                        </>     
+       
+            { 
+                results ? (
+                    
+                        
+                        <div className='Search'>
+                            <div className='TopTracks'>
+                        <img className='SearchImage' src={results.strArtistThumb} alt=''></img>
+                        <h3>Top Tracks:</h3>
+                        {songs}   
+                         </div>
+                        <div className='SearchResults'>
+                        <h1> {results.strArtist}</h1>   
+                       {
+                       results.intDiedYear===null ? <h2>Active from {results.intFormedYear} to Present</h2> : <h2>Active from {results.intFormedYear} to {results.intDiedYear}</h2> 
+                        
+                        
+                        }
+                       <h3>Genre:{results.strGenre}</h3>
+                        <p>{results.strBiographyEN}</p>
+                       </div>  
+                       </div>  
                     ) : null
             }
+            
             </div>
-        </div>
-    </div>
+     
 )
 }
 export default Search

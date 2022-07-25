@@ -1,41 +1,33 @@
 import {useEffect, useState} from 'react'
-import {getArtistByGenre,getAllGenres,getArt} from '../API/artistSearch'
+import {getArtistByGenre,getAllGenres} from '../API/artistSearch'
 import * as React from 'react';
 import Button from '@mui/material/Button';
 
 function Explore(){
 const [artists,setArtists] = useState([])
 const [list,setList] = useState([])
-// async function handleButton(id){
-//     setGenre( await ( getArtistByGenre(id)))
-//    }
 
 async function handleButton(id){
 try{
-console.log(id)
+
 const results= ((await getArtistByGenre(id)))
-console.log(results)
-const promises = results.map(result=>getArt(result.id))
-const images = await Promise.all(promises)
-console.log(images)
-const mappedResults = (results.map(async(result,index)=>{
-    // const image = images[index].data.images[0].url
-    
-    // console.log(image)
-    console.log(result)
+
+
+const mappedResults = (results.map((result,index)=>{
+   
     return (
         <div>  
-    {/* <img src={image} alt=''></img> */}
+    
     <h3>{result.name}</h3>
     <p>{result.blurbs}</p>
 
     </div>
     )
 }))
-console.log(mappedResults)
+
 setArtists(mappedResults)
 }catch(error){
-    console.log(error)
+    
 }
 }
 
@@ -44,7 +36,6 @@ setArtists(mappedResults)
 
 async function displayGenres(){
 const allGenres =  await getAllGenres()
-console.log(allGenres)
 const mappedGenres = allGenres.map((genre,index)=>{
     
     return (
@@ -66,14 +57,14 @@ useEffect(()=>{
 },[])
 
 
-console.log(list)
+
 
 
 
 
 
     return(
-        <div>
+        <div className='SearchResults'>
 
             
             {list}

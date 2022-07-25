@@ -1,6 +1,13 @@
 .App {
   text-align: center;
+  background-color: #312259 ;
+  min-height: 100vh;
   
+}
+h1{
+  color: white;
+  font-family: Michroma;
+  word-spacing: 5px;
 }
 .Container{
   background-image: url('/src/Images/back-view-crowd-fans-watching-live-performance-music-concert-night-copy-space_637285-544.webp');
@@ -39,78 +46,125 @@ a{
 .Search{
   display: flex;
 align-content: center;
-
-  /* background-color: #312259 ;
-  color: white;
-  font-family: Michroma;
-  height: 90vh; 
-  width: 100vw; */
 }
 
-/* .SearchContainer{
-  display: flex;
- background-color: #312259 ;
-  color: white;
-  font-family: Michroma;
-  height: 90vh; 
-  width: 100vw;
-} */
+
 
 .SearchBar{
 display: flex ;
 margin: 10px;
 align-items:  center;
 justify-content: center;
+color: white;
+font-family: Michroma;
+word-spacing: 5px;
+
 }
 
 .SearchResults{
   padding: 10px;
+  color: white;
   font-family: Michroma;
   word-spacing: 5px;
 }
 
 
 .SearchImage{
-  height: auto;
+  height: 500px;
   width: auto;
 }
 
-/* .Lyrics{
-  display: flex;
-  justify-content: center;
-  background-color: #312259 ;
+.TopTracks{
+  display:flex;
+  flex-direction: column;
   color: white;
-  height: 90vh; 
-  width: 100vw;
-} */
+  font-family: Michroma;
+}
+
+
 .Similar{
   display: flex;
   justify-content: center;
-  /* background-color: #312259 ;
-  color: white;
-  height: 90vh; 
-  width: 100vw; */
 }
 
 .About{
   display:flex;
-  background-color: #312259 ;
   color: white;
   font-family: Michroma;
+  word-spacing: 5px;
   font-size: 24px;
   word-spacing: 10px;
   height: 90vh;
  
 }
 
-
-/* .ExploreButton{
+.Card{
+  height: 200px;
+  width: 200px;
   margin: 5px;
 }
 
-.ExploreList{
-  width: 100vw;
-  display: flex;
-} */
+.CardContainer{
+  display:flex;
+  height: 300px;
+}
 
 
+
+@media screen and (max-width: 768px) {
+  .NavBar{
+    width: 768px;
+  }
+
+  .Search{
+    width: 768px;
+  }
+
+  .SearchImage{
+  height: 300px;
+  width: 300px;
+  }
+
+  .Card{
+    height: 150x;
+    width: 150px;
+    margin: 5px;
+  }
+
+  .CardContainer{
+    display:flex;
+    height: 350px;
+  }
+
+  .About{
+font-size: 18px;
+  }
+}
+
+
+@media screen and (max-width: 553px) {
+.App{
+  width: 768px ;
+}
+
+.SearchBar{
+  font-size: 48px;
+}
+.ABout{
+  font-size: 12px;
+}
+h3{
+  font-size: 48px;
+}
+
+p{
+  font-size: 48px;
+}
+
+.Container{
+  width: 768px;
+  height: 990px;
+
+}
+
+}

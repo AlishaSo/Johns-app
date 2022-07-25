@@ -2,7 +2,6 @@ import { useState } from "react"
 import {getLyrics} from '../API/artistSearch'
 import * as React from 'react';
 import Button from '@mui/material/Button';
-import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 
 function Lyrics(){
@@ -14,15 +13,19 @@ async function handleClick(word1,word2){
 
 const results = await getLyrics(word1,word2)
 console.log(results)
+if(!results.data.mus){
+    SetLyrics(null)
+    alert("Please check your spelling")
+}else{
 SetLyrics(results.data.mus[0].text)
 console.log(lyrics)
-
+}
 }
 
 
     return(<div>
         <div className="SearchBar"> 
-            <h4> Give me the lyrics for </h4>
+            <h4> Gimmie lyrics for </h4>
             <TextField id="outlined-basic" label="Song" variant="outlined" type='text' value={word2} onChange ={ e =>{
             let input = e.target.value
             setWord2(input)

@@ -23,6 +23,8 @@ Napster API - https://developer.prod.napster.com/developer
 
 Vegalime API - https://api.vagalume.com.br/docs/letras/
 
+AudioDB API - https://theaudiodb.com/api_guide.php
+
 ## MVP
 -Have 6 components to render an About page, Home page, Search page.
 
