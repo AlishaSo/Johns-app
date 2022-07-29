@@ -15,7 +15,7 @@ function App() {
     <div className="App">
 
     <NavBar></NavBar>
-    <div>
+    <div className='wrapper'> {/* add class name */}
       <Routes>
       <Route path='/' element={<Home/>} />
       <Route path='/search' element={<Search/>} />

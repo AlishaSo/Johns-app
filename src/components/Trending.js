@@ -86,11 +86,11 @@ displaySingles('singles')
 
 
     return(
- <div> 
-    <div >
-        <h1>Current trending albums </h1>       
-        <div className="CardContainer">
-        {albumList}
+      <div className="Trending-div">  {/* added class name */}
+         <div className="Current-trending-div">  {/* added class name */}
+          <h1>Current trending albums </h1>       
+          <div className="CardContainer">
+          {albumList}
         </div> 
     </div>
     <div>

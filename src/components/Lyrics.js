@@ -23,7 +23,7 @@ console.log(lyrics)
 }
 
 
-    return(<div>
+    return(<div className="Lyrics-div">  {/* added class name */}
         <div className="SearchBar"> 
             <h4> Gimmie lyrics for </h4>
             <TextField id="outlined-basic" label="Song" variant="outlined" type='text' value={word2} onChange ={ e =>{

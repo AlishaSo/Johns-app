@@ -16,10 +16,10 @@ const results= ((await getArtistByGenre(id)))
 const mappedResults = (results.map((result,index)=>{
    
     return (
-        <div>  
+        <div className='artists'>  {/* added class name */}
     
     <h3>{result.name}</h3>
-    <p>{result.blurbs}</p>
+    <p>{result.blurbs}</p>  {/* will need to map over these to join them */}
 
     </div>
     )
